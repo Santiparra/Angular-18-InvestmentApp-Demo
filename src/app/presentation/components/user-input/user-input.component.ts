@@ -17,7 +17,7 @@ export class UserInputComponent {
   enteredExpectedReturn = '4';
   enteredDuration = '10';
 
-  onSubmit() {
+  onSubmit(): void {
     this.calculate.emit({
       initialInvestment: Number(this.enteredInitialInvestment),
       annualInvestment: Number(this.enteredAnnualInvestment),
