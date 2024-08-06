@@ -1,7 +1,10 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, WritableSignal } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 
+import { InvestmentService } from '../../../data/services';
+
 import { InvestmentResult } from '../../../domain/models';
+
 
 @Component({
   selector: 'app-investment-results',
@@ -11,5 +14,9 @@ import { InvestmentResult } from '../../../domain/models';
   styleUrl: './investment-results.component.css'
 })
 export class InvestmentResultsComponent {
-  investmentResults = input<InvestmentResult[]>();
+  private readonly investmentService = inject(InvestmentService);
+
+  get results():WritableSignal<InvestmentResult[] | undefined> {
+    return this.investmentService.resultData;
+  }
 }
