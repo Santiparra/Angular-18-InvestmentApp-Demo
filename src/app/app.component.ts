@@ -1,11 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 
 import {
   HeaderComponent,
   InvestmentResultsComponent,
   UserInputComponent,
 } from './presentation/components';
-import { Investment, InvestmentResult } from './domain/models';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +14,4 @@ import { Investment, InvestmentResult } from './domain/models';
 })
 export class AppComponent {
   title = 'Angular-18-InvestmentApp-Demo';
-
-
 }
